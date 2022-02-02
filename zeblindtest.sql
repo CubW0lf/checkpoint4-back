@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : mer. 02 fév. 2022 à 12:09
+-- Généré le : mer. 02 fév. 2022 à 16:39
 -- Version du serveur :  5.7.34
 -- Version de PHP : 7.4.21
 
@@ -48,6 +48,13 @@ CREATE TABLE `equipe` (
   `id_partie` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Déchargement des données de la table `equipe`
+--
+
+INSERT INTO `equipe` (`id`, `nom`, `score`, `couleur`, `id_partie`) VALUES
+(1, 'Ploppers', 10, 'red', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -81,6 +88,13 @@ CREATE TABLE `joueur_partie` (
   `id_equipe` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Déchargement des données de la table `joueur_partie`
+--
+
+INSERT INTO `joueur_partie` (`id`, `id_joueur`, `id_partie`, `id_equipe`) VALUES
+(2, 4, 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -91,9 +105,16 @@ CREATE TABLE `morceau` (
   `id` int(11) NOT NULL,
   `auteur` varchar(255) NOT NULL,
   `titre` varchar(255) NOT NULL,
-  `numero` int(11) NOT NULL,
   `id_partie` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `morceau`
+--
+
+INSERT INTO `morceau` (`id`, `auteur`, `titre`, `id_partie`) VALUES
+(1, 'John Dahlback', 'Blink', 1),
+(3, 'plop', 'plop', 1);
 
 -- --------------------------------------------------------
 
@@ -102,8 +123,18 @@ CREATE TABLE `morceau` (
 --
 
 CREATE TABLE `partie` (
-  `id` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `organisateur` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `partie`
+--
+
+INSERT INTO `partie` (`id`, `organisateur`) VALUES
+(1, 4),
+(3, 4),
+(4, 4);
 
 -- --------------------------------------------------------
 
@@ -210,7 +241,7 @@ ALTER TABLE `aime`
 -- AUTO_INCREMENT pour la table `equipe`
 --
 ALTER TABLE `equipe`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `joueur`
@@ -222,19 +253,19 @@ ALTER TABLE `joueur`
 -- AUTO_INCREMENT pour la table `joueur_partie`
 --
 ALTER TABLE `joueur_partie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `morceau`
 --
 ALTER TABLE `morceau`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `partie`
 --
 ALTER TABLE `partie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `proposition`
