@@ -22,6 +22,15 @@ const getOneById = (id) => {
 
 // Get all from a Player
 
+const getAllFromPlayer = (id) => {
+    return new Promise((resolve, reject) => {
+        dbConnect.query("SELECT * FROM joueur_partie", id, (err, result) => {
+            if (err) reject(err);
+            else resolve(result);
+        });
+    });
+};
+
 // DELETE
 const deleteById = (id) => {
     return new Promise((resolve, reject) => {
@@ -42,4 +51,4 @@ const createNew = () => {
     });
 };
 
-export default { getAll, getOneById, deleteById, createNew };
+export default { getAll, getOneById, deleteById, createNew, getAllFromPlayer };

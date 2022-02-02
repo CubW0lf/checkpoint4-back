@@ -25,6 +25,17 @@ router
         }
     })
 
+    .get("/player/:id", async (req, res) => {
+        const id = req.params.id;
+
+        try {
+            const parties = await Partie.getAllFromPlayer();
+            res.json(parties);
+        } catch (error) {
+            res.json({ message: error.message }).status(500);
+        }
+    })
+
     .post("/", async (req, res) => {
         try {
             const partieCreate = await Partie.createNew();
