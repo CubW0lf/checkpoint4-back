@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -120,
-    "scrollLeft": -236,
+    "scrollTop": -240,
+    "scrollLeft": -152.78125,
     "zoomLevel": 0.8,
     "show": {
       "tableComment": true,
@@ -72,9 +72,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 113.5,
-          "top": 61.25,
-          "zIndex": 2,
+          "left": 28.5,
+          "top": 125,
+          "zIndex": 75,
           "widthName": 60,
           "widthComment": 60
         },
@@ -180,9 +180,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1618.044921875,
-          "top": 397.5,
-          "zIndex": 7,
+          "left": 1561.7949,
+          "top": 1092.5,
+          "zIndex": 64,
           "widthName": 60,
           "widthComment": 60
         },
@@ -311,9 +311,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 677.25,
-          "top": 20.25,
-          "zIndex": 3,
+          "left": 1078.5,
+          "top": 35.25,
+          "zIndex": 70,
           "widthName": 60,
           "widthComment": 60
         },
@@ -442,9 +442,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 673.5,
-          "top": 366.75,
-          "zIndex": 8,
+          "left": 1073.5,
+          "top": 321.75,
+          "zIndex": 73,
           "widthName": 65.59716796875,
           "widthComment": 60
         },
@@ -573,184 +573,14 @@
         ],
         "ui": {
           "active": false,
-          "left": 1251.8687,
-          "top": 63.5,
-          "zIndex": 4,
+          "left": 580.6187,
+          "top": 334.75,
+          "zIndex": 71,
           "widthName": 60,
           "widthComment": 60
         },
         "visible": true,
         "id": "ae5d2d06-4c4f-452a-a7bb-fd87b414f4d0"
-      },
-      {
-        "name": "equipe_partie",
-        "comment": "",
-        "columns": [
-          {
-            "name": "id",
-            "comment": "",
-            "dataType": "INTEGER",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": true,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": true,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "dfbe5e1c-7d67-4594-bd4c-8d74518638f5"
-          },
-          {
-            "name": "id_equipe",
-            "comment": "",
-            "dataType": "INTEGER",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": true,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "b03274cb-22f9-4a61-b392-96f0d411f4c8"
-          },
-          {
-            "name": "id_partie",
-            "comment": "",
-            "dataType": "INTEGER",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": true,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "4af34daf-b168-4a1c-a7b4-08cf2757167c"
-          }
-        ],
-        "ui": {
-          "active": false,
-          "left": 114.0313,
-          "top": 713.25,
-          "zIndex": 1,
-          "widthName": 80.787109375,
-          "widthComment": 60
-        },
-        "visible": true,
-        "id": "af434081-78b6-4ce2-8374-4fea9eddecd3"
-      },
-      {
-        "name": "equipe_joueur",
-        "comment": "",
-        "columns": [
-          {
-            "name": "id",
-            "comment": "",
-            "dataType": "INTEGER",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": true,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": true,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "9e5c4bab-a43e-460a-a7ee-d3e47baa0b28"
-          },
-          {
-            "name": "id_joueur",
-            "comment": "",
-            "dataType": "INTEGER",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": true,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "b9618edf-3a57-4ddf-b197-8c305b2e922b"
-          },
-          {
-            "name": "id_equipe",
-            "comment": "",
-            "dataType": "INTEGER",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": true,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "9fb58b52-d7ca-4122-8cc3-43070010326a"
-          }
-        ],
-        "ui": {
-          "active": false,
-          "left": 1622.7813,
-          "top": 708,
-          "zIndex": 6,
-          "widthName": 84.4052734375,
-          "widthComment": 60
-        },
-        "visible": true,
-        "id": "76275beb-786a-4db2-886e-703be6121a34"
       },
       {
         "name": "equipe",
@@ -847,13 +677,36 @@
               "widthDefault": 60
             },
             "id": "1f4da8aa-3f85-470f-a1a6-62cf396fcdce"
+          },
+          {
+            "name": "id_partie",
+            "comment": "",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "c53b06c1-8386-49f6-b817-cb8827e75edb"
           }
         ],
         "ui": {
           "active": false,
-          "left": 678.5,
-          "top": 703,
-          "zIndex": 5,
+          "left": 973.5,
+          "top": 944.25,
+          "zIndex": 79,
           "widthName": 60,
           "widthComment": 60
         },
@@ -959,14 +812,122 @@
         ],
         "ui": {
           "active": false,
-          "left": 1171.5313,
-          "top": 397.5,
-          "zIndex": 9,
+          "left": 1571.5313,
+          "top": 331.25,
+          "zIndex": 63,
           "widthName": 60,
           "widthComment": 60
         },
         "visible": true,
         "id": "f6e2b174-98a0-4a93-abed-1bac3c7a44f7"
+      },
+      {
+        "name": "joueur_partie",
+        "comment": "",
+        "columns": [
+          {
+            "name": "id",
+            "comment": "",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "8b397395-4cdc-4017-89f3-bc2af85e8864"
+          },
+          {
+            "name": "id_joueur",
+            "comment": "",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "6fc73255-9282-4962-922f-dfad08428059"
+          },
+          {
+            "name": "id_partie",
+            "comment": "",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "0199aa97-6168-4c67-926d-b64677f0e67b"
+          },
+          {
+            "name": "id_equipe",
+            "comment": "",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "ba3664fb-0ffe-4fd9-86c4-e4f0c2e94ab2"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 21.75,
+          "top": 1038.75,
+          "zIndex": 60,
+          "widthName": 77.88623046875,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "1f055239-f407-4b97-8431-18641eb78323"
       }
     ],
     "indexes": []
@@ -985,8 +946,8 @@
           "columnIds": [
             "42bacb7e-9069-4ff9-a0ec-141b92ddce9b"
           ],
-          "x": 460.5,
-          "y": 106,
+          "x": 375.5,
+          "y": 147.375,
           "direction": "right"
         },
         "end": {
@@ -994,8 +955,8 @@
           "columnIds": [
             "c466045f-868f-429e-9335-d4e4a93d09bd"
           ],
-          "x": 677.25,
-          "y": 106,
+          "x": 1078.5,
+          "y": 163.875,
           "direction": "left"
         },
         "constraintName": "fk_partie_to_morceau",
@@ -1011,8 +972,8 @@
           "columnIds": [
             "1cbd726e-6507-43d9-8bf0-0850b69489c9"
           ],
-          "x": 868.2275390625,
-          "y": 191.75,
+          "x": 1269.4775390625,
+          "y": 206.75,
           "direction": "bottom"
         },
         "end": {
@@ -1020,8 +981,8 @@
           "columnIds": [
             "b26691ad-5602-4c03-9cee-4af3f1eb1eda"
           ],
-          "x": 869.440673828125,
-          "y": 366.75,
+          "x": 1269.440673828125,
+          "y": 321.75,
           "direction": "top"
         },
         "constraintName": "fk_morceau_to_proposition",
@@ -1037,74 +998,22 @@
           "columnIds": [
             "1cbd726e-6507-43d9-8bf0-0850b69489c9"
           ],
-          "x": 1059.205078125,
-          "y": 106,
-          "direction": "right"
+          "x": 1078.5,
+          "y": 78.125,
+          "direction": "left"
         },
         "end": {
           "tableId": "ae5d2d06-4c4f-452a-a7bb-fd87b414f4d0",
           "columnIds": [
             "8ffefee3-fc00-4eab-af86-96be64292485"
           ],
-          "x": 1251.8687,
-          "y": 106.375,
-          "direction": "left"
+          "x": 972.50004765625,
+          "y": 377.625,
+          "direction": "right"
         },
         "constraintName": "fk_morceau_to_reponse",
         "visible": true,
         "id": "64217ef3-c2ce-444c-ad3c-e704d8e72142"
-      },
-      {
-        "identification": false,
-        "relationshipType": "ZeroOne",
-        "startRelationshipType": "Dash",
-        "start": {
-          "tableId": "2c726417-c2e5-4344-84ea-fb8872b24159",
-          "columnIds": [
-            "42bacb7e-9069-4ff9-a0ec-141b92ddce9b"
-          ],
-          "x": 287,
-          "y": 150.75,
-          "direction": "bottom"
-        },
-        "end": {
-          "tableId": "af434081-78b6-4ce2-8374-4fea9eddecd3",
-          "columnIds": [
-            "4af34daf-b168-4a1c-a7b4-08cf2757167c"
-          ],
-          "x": 287.5313,
-          "y": 713.25,
-          "direction": "top"
-        },
-        "constraintName": "fk_partie_to_equipe_partie",
-        "visible": true,
-        "id": "f82d23ae-af26-4c8f-95a5-8c1ddc5dcd83"
-      },
-      {
-        "identification": false,
-        "relationshipType": "OneOnly",
-        "startRelationshipType": "Dash",
-        "start": {
-          "tableId": "02ee1cf8-ed71-4800-bc5e-e4d4f60d5e98",
-          "columnIds": [
-            "52826840-7de6-439a-a10d-2025aafac4a0"
-          ],
-          "x": 1809.0224609375,
-          "y": 548.5,
-          "direction": "bottom"
-        },
-        "end": {
-          "tableId": "76275beb-786a-4db2-886e-703be6121a34",
-          "columnIds": [
-            "b9618edf-3a57-4ddf-b197-8c305b2e922b"
-          ],
-          "x": 1796.2813,
-          "y": 708,
-          "direction": "top"
-        },
-        "constraintName": "fk_player_to_equipe_player",
-        "visible": true,
-        "id": "44174154-5854-4034-a79e-2b7f182bf0df"
       },
       {
         "identification": false,
@@ -1115,8 +1024,8 @@
           "columnIds": [
             "377e4a4e-0e52-4537-b045-2fd67077375b"
           ],
-          "x": 869.4775390625,
-          "y": 703,
+          "x": 1068.98876953125,
+          "y": 944.25,
           "direction": "top"
         },
         "end": {
@@ -1124,8 +1033,8 @@
           "columnIds": [
             "4affdb42-d25d-4382-be34-8e5c1c6bb316"
           ],
-          "x": 869.440673828125,
-          "y": 538.25,
+          "x": 1269.440673828125,
+          "y": 493.25,
           "direction": "bottom"
         },
         "constraintName": "fk_equipe_to_proposition",
@@ -1141,74 +1050,22 @@
           "columnIds": [
             "377e4a4e-0e52-4537-b045-2fd67077375b"
           ],
-          "x": 1060.455078125,
-          "y": 816.25,
-          "direction": "right"
+          "x": 1259.96630859375,
+          "y": 944.25,
+          "direction": "top"
         },
         "end": {
           "tableId": "ae5d2d06-4c4f-452a-a7bb-fd87b414f4d0",
           "columnIds": [
             "b377b192-9b24-4763-b239-c373b6f568a5"
           ],
-          "x": 1251.8687,
-          "y": 192.125,
-          "direction": "left"
+          "x": 972.50004765625,
+          "y": 463.375,
+          "direction": "right"
         },
         "constraintName": "fk_equipe_to_reponse",
         "visible": true,
         "id": "f487fa4e-9484-4a6d-a254-6ba913eb76b7"
-      },
-      {
-        "identification": false,
-        "relationshipType": "ZeroOne",
-        "startRelationshipType": "Dash",
-        "start": {
-          "tableId": "9dee5bbf-82ae-4118-a8c6-c1eee3654e05",
-          "columnIds": [
-            "377e4a4e-0e52-4537-b045-2fd67077375b"
-          ],
-          "x": 678.5,
-          "y": 778.5,
-          "direction": "left"
-        },
-        "end": {
-          "tableId": "af434081-78b6-4ce2-8374-4fea9eddecd3",
-          "columnIds": [
-            "b03274cb-22f9-4a61-b392-96f0d411f4c8"
-          ],
-          "x": 461.0313,
-          "y": 778.5,
-          "direction": "right"
-        },
-        "constraintName": "fk_equipe_to_equipe_partie",
-        "visible": true,
-        "id": "d946183a-0f20-4521-a546-70080b4fa329"
-      },
-      {
-        "identification": false,
-        "relationshipType": "OneOnly",
-        "startRelationshipType": "Dash",
-        "start": {
-          "tableId": "9dee5bbf-82ae-4118-a8c6-c1eee3654e05",
-          "columnIds": [
-            "377e4a4e-0e52-4537-b045-2fd67077375b"
-          ],
-          "x": 1060.455078125,
-          "y": 740.75,
-          "direction": "right"
-        },
-        "end": {
-          "tableId": "76275beb-786a-4db2-886e-703be6121a34",
-          "columnIds": [
-            "9fb58b52-d7ca-4122-8cc3-43070010326a"
-          ],
-          "x": 1622.7813,
-          "y": 773.25,
-          "direction": "left"
-        },
-        "constraintName": "fk_equipe_to_equipe_player",
-        "visible": true,
-        "id": "55122a52-b4bf-4847-a325-9729f9534519"
       },
       {
         "identification": false,
@@ -1219,18 +1076,18 @@
           "columnIds": [
             "52826840-7de6-439a-a10d-2025aafac4a0"
           ],
-          "x": 1618.044921875,
-          "y": 473,
-          "direction": "left"
+          "x": 1752.7724390625,
+          "y": 1092.5,
+          "direction": "top"
         },
         "end": {
           "tableId": "f6e2b174-98a0-4a93-abed-1bac3c7a44f7",
           "columnIds": [
             "bb02a31a-b51b-4f15-a2f9-ccf13163594a"
           ],
-          "x": 1541.4766125,
-          "y": 473,
-          "direction": "right"
+          "x": 1756.50395625,
+          "y": 482.25,
+          "direction": "bottom"
         },
         "constraintName": "fk_joueur_to_like",
         "visible": true,
@@ -1245,8 +1102,8 @@
           "columnIds": [
             "285c14fa-8a36-4f37-958d-ebc6da094f52"
           ],
-          "x": 1065.38134765625,
-          "y": 452.5,
+          "x": 1465.38134765625,
+          "y": 407.5,
           "direction": "right"
         },
         "end": {
@@ -1254,13 +1111,117 @@
           "columnIds": [
             "6ece5ab5-f74a-4492-ae8d-d75f746eee69"
           ],
-          "x": 1171.5313,
-          "y": 473,
+          "x": 1571.5313,
+          "y": 406.75,
           "direction": "left"
         },
         "constraintName": "fk_proposition_to_like",
         "visible": true,
         "id": "e4930d9c-7184-476a-bbd8-4d1a22ae3fb4"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "02ee1cf8-ed71-4800-bc5e-e4d4f60d5e98",
+          "columnIds": [
+            "52826840-7de6-439a-a10d-2025aafac4a0"
+          ],
+          "x": 1561.7949,
+          "y": 1168,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "1f055239-f407-4b97-8431-18641eb78323",
+          "columnIds": [
+            "6fc73255-9282-4962-922f-dfad08428059"
+          ],
+          "x": 368.75,
+          "y": 1152,
+          "direction": "right"
+        },
+        "constraintName": "fk_joueur_to_joueur_partie",
+        "visible": true,
+        "id": "6c2c9373-4edb-428e-bec8-350b9b58fda0"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "2c726417-c2e5-4344-84ea-fb8872b24159",
+          "columnIds": [
+            "42bacb7e-9069-4ff9-a0ec-141b92ddce9b"
+          ],
+          "x": 202,
+          "y": 214.5,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "1f055239-f407-4b97-8431-18641eb78323",
+          "columnIds": [
+            "0199aa97-6168-4c67-926d-b64677f0e67b"
+          ],
+          "x": 195.25,
+          "y": 1038.75,
+          "direction": "top"
+        },
+        "constraintName": "fk_partie_to_joueur_partie",
+        "visible": true,
+        "id": "b1d13521-434b-4742-9b3b-c268f8cd5f10"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Ring",
+        "start": {
+          "tableId": "9dee5bbf-82ae-4118-a8c6-c1eee3654e05",
+          "columnIds": [
+            "377e4a4e-0e52-4537-b045-2fd67077375b"
+          ],
+          "x": 973.5,
+          "y": 987.125,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "1f055239-f407-4b97-8431-18641eb78323",
+          "columnIds": [
+            "ba3664fb-0ffe-4fd9-86c4-e4f0c2e94ab2"
+          ],
+          "x": 368.75,
+          "y": 1076.5,
+          "direction": "right"
+        },
+        "constraintName": "fk_equipe_to_joueur_partie",
+        "visible": true,
+        "id": "04ee15c8-073b-4374-afd6-7b22a571e636"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "2c726417-c2e5-4344-84ea-fb8872b24159",
+          "columnIds": [
+            "42bacb7e-9069-4ff9-a0ec-141b92ddce9b"
+          ],
+          "x": 375.5,
+          "y": 192.125,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "9dee5bbf-82ae-4118-a8c6-c1eee3654e05",
+          "columnIds": [
+            "c53b06c1-8386-49f6-b817-cb8827e75edb"
+          ],
+          "x": 973.5,
+          "y": 1072.875,
+          "direction": "left"
+        },
+        "constraintName": "fk_partie_to_equipe",
+        "visible": true,
+        "id": "f2659f78-b663-4393-997d-f4f7d6fb4596"
       }
     ]
   }
