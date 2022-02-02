@@ -8,6 +8,4 @@ export const setupRoutes = (app) => {
     app.use("/players", playerController);
     app.use("/parties", partieController);
     app.use("/equipes", equipeController);
-
-    // ... les autres routes ...
 };

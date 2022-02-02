@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -488,
-    "scrollLeft": -215.78125,
-    "zoomLevel": 0.8,
+    "scrollTop": -391,
+    "scrollLeft": -25,
+    "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -704,8 +704,8 @@
         ],
         "ui": {
           "active": false,
-          "left": 973.5,
-          "top": 944.25,
+          "left": 953.5003,
+          "top": 930.9173,
           "zIndex": 8,
           "widthName": 60,
           "widthComment": 60
@@ -849,6 +849,29 @@
             "id": "8b397395-4cdc-4017-89f3-bc2af85e8864"
           },
           {
+            "name": "organisateur",
+            "comment": "",
+            "dataType": "TINYINT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 74.26806640625,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "fb454236-1afd-432f-847d-2bee28ca6667"
+          },
+          {
             "name": "id_joueur",
             "comment": "",
             "dataType": "INTEGER",
@@ -920,9 +943,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 21.75,
-          "top": 1038.75,
-          "zIndex": 1,
+          "left": 25.0833,
+          "top": 1039.8611,
+          "zIndex": 19,
           "widthName": 77.88623046875,
           "widthComment": 60
         },
@@ -1024,8 +1047,8 @@
           "columnIds": [
             "377e4a4e-0e52-4537-b045-2fd67077375b"
           ],
-          "x": 1068.98876953125,
-          "y": 944.25,
+          "x": 1048.9890695312502,
+          "y": 930.9173,
           "direction": "top"
         },
         "end": {
@@ -1050,8 +1073,8 @@
           "columnIds": [
             "377e4a4e-0e52-4537-b045-2fd67077375b"
           ],
-          "x": 1259.96630859375,
-          "y": 944.25,
+          "x": 1239.9666085937502,
+          "y": 930.9173,
           "direction": "top"
         },
         "end": {
@@ -1137,8 +1160,8 @@
           "columnIds": [
             "6fc73255-9282-4962-922f-dfad08428059"
           ],
-          "x": 368.75,
-          "y": 1152,
+          "x": 386.35136640625,
+          "y": 1168.4861,
           "direction": "right"
         },
         "constraintName": "fk_joueur_to_joueur_partie",
@@ -1163,8 +1186,8 @@
           "columnIds": [
             "0199aa97-6168-4c67-926d-b64677f0e67b"
           ],
-          "x": 195.25,
-          "y": 1038.75,
+          "x": 205.717333203125,
+          "y": 1039.8611,
           "direction": "top"
         },
         "constraintName": "fk_partie_to_joueur_partie",
@@ -1180,8 +1203,8 @@
           "columnIds": [
             "377e4a4e-0e52-4537-b045-2fd67077375b"
           ],
-          "x": 973.5,
-          "y": 987.125,
+          "x": 953.5003,
+          "y": 973.7923,
           "direction": "left"
         },
         "end": {
@@ -1189,8 +1212,8 @@
           "columnIds": [
             "ba3664fb-0ffe-4fd9-86c4-e4f0c2e94ab2"
           ],
-          "x": 368.75,
-          "y": 1076.5,
+          "x": 386.35136640625,
+          "y": 1082.7361,
           "direction": "right"
         },
         "constraintName": "fk_equipe_to_joueur_partie",
@@ -1215,8 +1238,8 @@
           "columnIds": [
             "c53b06c1-8386-49f6-b817-cb8827e75edb"
           ],
-          "x": 973.5,
-          "y": 1072.875,
+          "x": 953.5003,
+          "y": 1059.5423,
           "direction": "left"
         },
         "constraintName": "fk_partie_to_equipe",

@@ -36,15 +36,28 @@ router
         }
     })
 
-    .post("/", async (req, res) => {
+    .get("/organisateur/:id", async (req, res) => {
+        const id = req.params.id;
+
         try {
-            const partieCreate = await Partie.createNew();
+            const parties = await Partie.getAllFromOrganisateur(id);
+            res.json(parties);
+        } catch (error) {
+            res.json({ message: error.message }).status(500);
+        }
+    })
+
+    .post("/:id_player", async (req, res) => {
+        const id_joueur = req.params.id_player;
+
+        try {
+            const partieCreate = await Partie.createNew(id_joueur);
             if (partieCreate) {
                 const newPartie = await Partie.getOneById(partieCreate);
                 res.json(newPartie);
-            } else res.status(422).json({ message: error.message });
+            } else res.json({ message: error.message }).status(422);
         } catch (err) {
-            res.status(500).json({ message: err.message });
+            res.json({ message: err.message }).status(500);
         }
     })
 

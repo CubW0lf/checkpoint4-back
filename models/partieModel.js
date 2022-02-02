@@ -31,6 +31,17 @@ const getAllFromPlayer = (id) => {
     });
 };
 
+// Get all from organisateur
+
+const getAllFromOrganisateur = (id) => {
+    return new Promise((resolve, reject) => {
+        dbConnect.query("SELECT * FROM partie WHERE organisateur = ?", id, (err, result) => {
+            if (err) reject(err);
+            else resolve(result);
+        });
+    });
+};
+
 // DELETE
 const deleteById = (id) => {
     return new Promise((resolve, reject) => {
@@ -42,13 +53,27 @@ const deleteById = (id) => {
 };
 
 // CREATE
-const createNew = () => {
+const createNew = (id_organisateur) => {
     return new Promise((resolve, reject) => {
-        dbConnect.query("INSERT INTO partie DEFAULT VALUES;", (err, result) => {
+        dbConnect.query("INSERT INTO partie (organisateur) VALUES (?);", id_organisateur, (err, result) => {
             if (err) reject(err);
             else resolve(result.insertId);
         });
     });
 };
 
-export default { getAll, getOneById, deleteById, createNew, getAllFromPlayer };
+// ADD Player
+const addPlayer = (id_joueur, id_partie, organisateur) => {
+    return new Promise((resolve, reject) => {
+        dbConnect.query(
+            "INSERT INTO joueur_partie (id_joueur, id_partie) VALUES (?, ?)",
+            [id_joueur, id_partie, organisateur],
+            (err, result) => {
+                if (err) reject(err);
+                else resolve(result.insertId);
+            }
+        );
+    });
+};
+
+export default { getAll, getOneById, deleteById, createNew, getAllFromPlayer, getAllFromOrganisateur, addPlayer };
