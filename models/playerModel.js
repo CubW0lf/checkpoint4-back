@@ -2,7 +2,7 @@ import dbConnect from "../config/db-config.js";
 
 const findByEmail = (email) => {
     return new Promise((resolve, reject) => {
-        dbConnect.query("SELECT * FROM player WHERE email = ?", email, (err, result) => {
+        dbConnect.query("SELECT * FROM joueur WHERE email = ?", email, (err, result) => {
             if (err) reject(err);
             else resolve(result[0]);
         });
@@ -11,7 +11,7 @@ const findByEmail = (email) => {
 
 const findById = (id) => {
     return new Promise((resolve, reject) => {
-        dbConnect.query("SELECT * FROM player WHERE id = ?", id, (err, result) => {
+        dbConnect.query("SELECT * FROM joueur WHERE id = ?", id, (err, result) => {
             if (err) reject(err);
             else resolve(result[0]);
         });
@@ -20,7 +20,7 @@ const findById = (id) => {
 
 const findGames = (id) => {
     return new Promise((resolve, reject) => {
-        dbConnect.query("SELECT * FROM player_game WHERE player_id = ?", id, (err, result) => {
+        dbConnect.query("SELECT * FROM joueur_game WHERE joueur_id = ?", id, (err, result) => {
             if (err) reject(err);
             else resolve(result[0]);
         });
@@ -29,11 +29,11 @@ const findGames = (id) => {
 
 // CREATE
 const createNew = (player) => {
-    const { email, password, pseudo, is_admin } = player;
+    const { email, password, pseudo } = player;
     return new Promise((resolve, reject) => {
         dbConnect.query(
-            "INSERT INTO player (email, password, pseudo, is_admin) VALUES (?, ?, ?, ?)",
-            [email, password, pseudo, is_admin],
+            "INSERT INTO joueur (email, password, pseudo) VALUES (?, ?, ?)",
+            [email, password, pseudo],
             (err, result) => {
                 if (err) reject(err);
                 else resolve(result.insertId);
@@ -45,7 +45,7 @@ const createNew = (player) => {
 // DELETE
 const deleteById = (id) => {
     return new Promise((resolve, reject) => {
-        dbConnect.query("DELETE FROM player WHERE id = ?", id, (err, result) => {
+        dbConnect.query("DELETE FROM joueur WHERE id = ?", id, (err, result) => {
             if (err) reject(err);
             else resolve(result.affectedRows);
         });
@@ -57,7 +57,7 @@ const updatePlayer = (game) => {
     const { email, pseudo, password, id } = game;
     return new Promise((resolve, reject) => {
         dbConnect.query(
-            "UPDATE player SET email = ?, pseudo = ?, password = ? WHERE id = ?",
+            "UPDATE joueur SET email = ?, pseudo = ?, password = ? WHERE id = ?",
             [email, pseudo, password, id],
             (err, result) => {
                 if (err) reject(err);

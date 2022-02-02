@@ -5,11 +5,9 @@ const router = express.Router();
 
 const schemaPlayer = Joi.object({
     id: Joi.number().integer(),
-    title: Joi.string().min(3).max(255).required(),
-    description: Joi.string().min(3).required(),
-    image: Joi.string().min(3),
-    date: Joi.date().required(),
-    id_category: Joi.number().integer().required(),
+    pseudo: Joi.string().min(3).max(255).required(),
+    email: Joi.string().email().required(),
+    password: Joi.string().min(3).max(255).required(),
 });
 
 router
