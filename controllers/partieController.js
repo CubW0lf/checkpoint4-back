@@ -11,7 +11,7 @@ router
 
             res.json(partie);
         } catch (error) {
-            res.status(500).json({ message: error.message });
+            res.json({ message: error.message }).status(500);
         }
     })
 
@@ -21,7 +21,20 @@ router
 
             res.json(parties);
         } catch (error) {
-            res.status(500).json({ message: error.message });
+            res.json({ message: error.message }).status(500);
+        }
+    })
+
+    // Get All players in a game
+
+    .get("/:id/players", async (req, res) => {
+        const id_partie = req.params.id;
+        try {
+            const players = await Partie.getAllPlayer(id_partie);
+
+            res.json(players);
+        } catch (error) {
+            res.json({ message: error.message }).status(500);
         }
     })
 

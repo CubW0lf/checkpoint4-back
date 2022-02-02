@@ -9,6 +9,16 @@ const getAll = () => {
     });
 };
 
+// Get By game
+const getAllFromGame = (id_partie) => {
+    return new Promise((resolve, reject) => {
+        dbConnect.query("SELECT * FROM equipe WHERE id_partie = ?", id_partie, (err, result) => {
+            if (err) reject(err);
+            else resolve(result);
+        });
+    });
+};
+
 // READ ONE
 const getOneById = (id) => {
     return new Promise((resolve, reject) => {
@@ -51,4 +61,4 @@ const updateMovie = (movie) => {
     });
 };
 
-export default { getAll, getOneById, deleteById, createNew, updateMovie };
+export default { getAll, getOneById, deleteById, createNew, updateMovie, getAllFromGame };

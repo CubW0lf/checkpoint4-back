@@ -29,7 +29,7 @@ router
 
             res.json(player);
         } catch (error) {
-            res.status(500).json({ message: error.message });
+            res.json({ message: error.message }).status(500);
         }
     })
 

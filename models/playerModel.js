@@ -1,5 +1,14 @@
 import dbConnect from "../config/db-config.js";
 
+const getAll = () => {
+    return new Promise((resolve, reject) => {
+        dbConnect.query("SELECT * FROM joueur", (err, results) => {
+            if (err) reject(err);
+            else resolve(results);
+        });
+    });
+};
+
 const findByEmail = (email) => {
     return new Promise((resolve, reject) => {
         dbConnect.query("SELECT * FROM joueur WHERE email = ?", email, (err, result) => {
@@ -67,4 +76,4 @@ const updatePlayer = (game) => {
     });
 };
 
-export default { findByEmail, createNew, findById, deleteById, updatePlayer, findGames };
+export default { findByEmail, createNew, findById, deleteById, updatePlayer, findGames, getAll };

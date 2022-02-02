@@ -22,9 +22,20 @@ const getOneById = (id) => {
 
 // Get all from a Player
 
-const getAllFromPlayer = (id) => {
+const getAllFromPlayer = (id_player) => {
     return new Promise((resolve, reject) => {
-        dbConnect.query("SELECT * FROM joueur_partie WHERE id_joueur = ?", id, (err, result) => {
+        dbConnect.query("SELECT * FROM joueur_partie WHERE id_joueur = ?", id_player, (err, result) => {
+            if (err) reject(err);
+            else resolve(result);
+        });
+    });
+};
+
+// Get all players from a game
+
+const getAllPlayer = (id_partie) => {
+    return new Promise((resolve, reject) => {
+        dbConnect.query("SELECT * FROM joueur_partie WHERE id_partie = ?", id_partie, (err, result) => {
             if (err) reject(err);
             else resolve(result);
         });
@@ -76,4 +87,13 @@ const addPlayer = (id_joueur, id_partie, organisateur) => {
     });
 };
 
-export default { getAll, getOneById, deleteById, createNew, getAllFromPlayer, getAllFromOrganisateur, addPlayer };
+export default {
+    getAll,
+    getOneById,
+    deleteById,
+    createNew,
+    getAllFromPlayer,
+    getAllFromOrganisateur,
+    addPlayer,
+    getAllPlayer,
+};
