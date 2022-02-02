@@ -24,7 +24,7 @@ const getOneById = (id) => {
 
 const getAllFromPlayer = (id) => {
     return new Promise((resolve, reject) => {
-        dbConnect.query("SELECT * FROM joueur_partie", id, (err, result) => {
+        dbConnect.query("SELECT * FROM joueur_partie WHERE id_joueur = ?", id, (err, result) => {
             if (err) reject(err);
             else resolve(result);
         });

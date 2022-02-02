@@ -29,7 +29,7 @@ router
         const id = req.params.id;
 
         try {
-            const parties = await Partie.getAllFromPlayer();
+            const parties = await Partie.getAllFromPlayer(id);
             res.json(parties);
         } catch (error) {
             res.json({ message: error.message }).status(500);
