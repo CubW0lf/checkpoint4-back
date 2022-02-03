@@ -61,6 +61,21 @@ router
         } catch (err) {
             res.json({ message: err.message }).status(500);
         }
+    })
+
+    .delete("/:id", async (req, res) => {
+        const id = req.params.id;
+        try {
+            const articleDelete = await Morceau.deleteById(id);
+            if (articleDelete) {
+                res.json(`Le Morceau ${id} a bien été effacée`);
+            } else {
+                res.json(`Une erreur est survenue lors de la suppression`).status(422);
+            }
+        } catch (error) {
+            res.json(`Erreur serveur`).status(500);
+        }
+        return res.status(201).end();
     });
 
 export default router;
