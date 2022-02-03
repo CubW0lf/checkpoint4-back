@@ -33,6 +33,17 @@ router
         }
     })
 
+    .get("/team/:id", async (req, res) => {
+        const team_id = req.params.id;
+        try {
+            const player = await Player.getAllFromTeam(team_id);
+
+            res.json(player);
+        } catch (error) {
+            res.json({ message: error.message }).status(500);
+        }
+    })
+
     .post("/", async (req, res) => {
         const player = {
             title: req.body.title,

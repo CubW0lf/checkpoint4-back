@@ -9,6 +9,15 @@ const getAll = () => {
     });
 };
 
+const getAllFromTeam = (team_id) => {
+    return new Promise((resolve, reject) => {
+        dbConnect.query("SELECT * FROM joueur_partie WHERE  id_equipe = ?", team_id, (err, results) => {
+            if (err) reject(err);
+            else resolve(results);
+        });
+    });
+};
+
 const findByEmail = (email) => {
     return new Promise((resolve, reject) => {
         dbConnect.query("SELECT * FROM joueur WHERE email = ?", email, (err, result) => {
@@ -94,4 +103,14 @@ const patchPlayer = (player, password) => {
     });
 };
 
-export default { findByEmail, createNew, findById, deleteById, updatePlayer, findGames, getAll, patchPlayer };
+export default {
+    findByEmail,
+    createNew,
+    findById,
+    deleteById,
+    updatePlayer,
+    findGames,
+    getAll,
+    patchPlayer,
+    getAllFromTeam,
+};

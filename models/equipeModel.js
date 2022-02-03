@@ -50,15 +50,4 @@ const createNew = (movie) => {
     });
 };
 
-// UPDATE
-const updateMovie = (movie) => {
-    const { title, id } = movie;
-    return new Promise((resolve, reject) => {
-        dbConnect.query("UPDATE movie SET title = ? WHERE id = ?", [title, id], (err, result) => {
-            if (err) reject(err);
-            else resolve(result);
-        });
-    });
-};
-
-export default { getAll, getOneById, deleteById, createNew, updateMovie, getAllFromGame };
+export default { getAll, getOneById, deleteById, createNew, getAllFromGame };
