@@ -4,6 +4,8 @@ import Joi from "joi";
 const router = express.Router();
 
 router
+
+    // Get One
     .get("/:id", async (req, res) => {
         const id = req.params.id;
         try {
@@ -15,24 +17,12 @@ router
         }
     })
 
+    // Get All
     .get("/", async (req, res) => {
         try {
             const parties = await Partie.getAll();
 
             res.json(parties);
-        } catch (error) {
-            res.json({ message: error.message }).status(500);
-        }
-    })
-
-    // Get All players in a game
-
-    .get("/:id/players", async (req, res) => {
-        const id_partie = req.params.id;
-        try {
-            const players = await Partie.getAllPlayer(id_partie);
-
-            res.json(players);
         } catch (error) {
             res.json({ message: error.message }).status(500);
         }
@@ -55,6 +45,30 @@ router
         try {
             const parties = await Partie.getAllFromOrganisateur(id);
             res.json(parties);
+        } catch (error) {
+            res.json({ message: error.message }).status(500);
+        }
+    })
+
+    .get("/available/:id", async (req, res) => {
+        const id = req.params.id;
+
+        try {
+            const parties = await Partie.getAllAvailable(id);
+            res.json(parties);
+        } catch (error) {
+            res.json({ message: error.message }).status(500);
+        }
+    })
+
+    // Get All players in a game
+
+    .get("/:id/players", async (req, res) => {
+        const id_partie = req.params.id;
+        try {
+            const players = await Partie.getAllPlayer(id_partie);
+
+            res.json(players);
         } catch (error) {
             res.json({ message: error.message }).status(500);
         }

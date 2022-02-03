@@ -33,26 +33,6 @@ router
         }
     })
 
-    .put("/:id", async (req, res) => {
-        const player = {
-            id: req.params.id,
-            title: req.body.title,
-            description: req.body.description,
-            image: req.body.image,
-            date: req.body.date,
-            id_category: req.body.id_category,
-        };
-
-        try {
-            const { error, value } = await schemaPlayer.validate(player);
-            const playerUpdate = await Player.updateplayer(value);
-            if (playerUpdate) res.json(player);
-            else res.status(422).json({ message: error.message });
-        } catch (err) {
-            res.status(500).json({ message: err.message });
-        }
-    })
-
     .post("/", async (req, res) => {
         const player = {
             title: req.body.title,
@@ -71,6 +51,23 @@ router
             } else res.status(422).json({ message: error.message });
         } catch (err) {
             res.status(500).json({ message: err.message });
+        }
+    })
+
+    .patch("/:id", async (req, res) => {
+        const player = {
+            id: req.params.id,
+            pseudo: req.body.pseudo,
+            email: req.body.email,
+        };
+
+        try {
+            const { error, value } = await schemaArticle.validate(article);
+            const articleUpdate = await Article.updateArticle(value);
+            if (articleUpdate) res.json(article);
+            else res.json({ message: error.message }).status(422);
+        } catch (err) {
+            res.json({ message: err.message }).status(500);
         }
     })
 

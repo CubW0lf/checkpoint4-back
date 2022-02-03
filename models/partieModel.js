@@ -53,6 +53,17 @@ const getAllFromOrganisateur = (id) => {
     });
 };
 
+// Get All Available for a player wich is not leader
+
+const getAllAvailable = (id) => {
+    return new Promise((resolve, reject) => {
+        dbConnect.query("SELECT * FROM partie WHERE status = 'En Attente' AND organisateur != ?", id, (err, result) => {
+            if (err) reject(err);
+            else resolve(result);
+        });
+    });
+};
+
 // DELETE
 const deleteById = (id) => {
     return new Promise((resolve, reject) => {
@@ -96,4 +107,5 @@ export default {
     getAllFromOrganisateur,
     addPlayer,
     getAllPlayer,
+    getAllAvailable,
 };
