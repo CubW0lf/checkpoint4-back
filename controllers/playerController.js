@@ -62,10 +62,19 @@ router
         };
 
         try {
-            const { error, value } = await schemaArticle.validate(article);
-            const articleUpdate = await Article.updateArticle(value);
-            if (articleUpdate) res.json(article);
-            else res.json({ message: error.message }).status(422);
+            const { error, value } = await schemaPlayer.validate(player);
+
+            const fullPlayer = await Player.findById(player.id);
+
+            if (fullPlayer) {
+                const patchedPlayer = await Player.patchPlayer(value, fullPlayer.password);
+                if (patchedPlayer) res.json(player);
+                else {
+                    res.json({ message: error.message }).status(422);
+                }
+            } else {
+                res.json({ message: error.message }).status(422);
+            }
         } catch (err) {
             res.json({ message: err.message }).status(500);
         }
@@ -76,7 +85,7 @@ router
         try {
             const playerDelete = await Player.deleteById(id);
             if (playerDelete) {
-                res.json(`L'player ${id} a bien été effacée`);
+                res.json(`Le joueur ${id} a bien été effacée`);
             } else {
                 res.status(422).json(`Une erreur est survenue lors de la suppression`);
             }

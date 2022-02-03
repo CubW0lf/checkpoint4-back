@@ -76,4 +76,22 @@ const updatePlayer = (game) => {
     });
 };
 
-export default { findByEmail, createNew, findById, deleteById, updatePlayer, findGames, getAll };
+// PATCH
+const patchPlayer = (player, password) => {
+    const { email, pseudo, id } = player;
+    return new Promise((resolve, reject) => {
+        dbConnect.query(
+            "UPDATE joueur SET email = ?, pseudo = ?, password = ? WHERE id = ?",
+            [email, pseudo, password, id],
+            (err, result) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(result);
+                }
+            }
+        );
+    });
+};
+
+export default { findByEmail, createNew, findById, deleteById, updatePlayer, findGames, getAll, patchPlayer };
