@@ -11,10 +11,29 @@ const getAll = () => {
 
 const getAllFromTeam = (team_id) => {
     return new Promise((resolve, reject) => {
-        dbConnect.query("SELECT * FROM joueur_partie WHERE  id_equipe = ?", team_id, (err, results) => {
-            if (err) reject(err);
-            else resolve(results);
-        });
+        dbConnect.query(
+            "SELECT * FROM joueur_partie AS jp INNER JOIN joueur AS j ON j.id = jp.id_joueur WHERE  id_equipe = ?",
+            team_id,
+            (err, results) => {
+                if (err) reject(err);
+                else resolve(results);
+            }
+        );
+    });
+};
+
+// Get all players from a game
+
+const getAllPlayer = (id_partie) => {
+    return new Promise((resolve, reject) => {
+        dbConnect.query(
+            "SELECT * FROM joueur_partie AS jp INNER JOIN joueur AS j ON j.id = jp.id_joueur WHERE id_partie = ?",
+            id_partie,
+            (err, result) => {
+                if (err) reject(err);
+                else resolve(result);
+            }
+        );
     });
 };
 
@@ -85,6 +104,22 @@ const updatePlayer = (game) => {
     });
 };
 
+// UPDATE
+const chooseTeam = (team) => {
+    const { id_equipe, id_joueur, id_partie } = team;
+
+    return new Promise((resolve, reject) => {
+        dbConnect.query(
+            "UPDATE joueur_partie SET id_equipe = ? WHERE id_joueur = ? AND id_partie = ?",
+            [id_equipe, id_joueur, id_partie],
+            (err, result) => {
+                if (err) reject(err);
+                else resolve(result);
+            }
+        );
+    });
+};
+
 // PATCH
 const patchPlayer = (player, password) => {
     const { email, pseudo, id } = player;
@@ -113,4 +148,6 @@ export default {
     getAll,
     patchPlayer,
     getAllFromTeam,
+    getAllPlayer,
+    chooseTeam,
 };

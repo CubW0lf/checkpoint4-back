@@ -9,7 +9,7 @@ const getAll = () => {
     });
 };
 
-// Get By game
+// Get All Teams from a game
 const getAllFromGame = (id_partie) => {
     return new Promise((resolve, reject) => {
         dbConnect.query("SELECT * FROM equipe WHERE id_partie = ?", id_partie, (err, result) => {

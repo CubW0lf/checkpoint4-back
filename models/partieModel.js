@@ -31,17 +31,6 @@ const getAllFromPlayer = (id_player) => {
     });
 };
 
-// Get all players from a game
-
-const getAllPlayer = (id_partie) => {
-    return new Promise((resolve, reject) => {
-        dbConnect.query("SELECT * FROM joueur_partie WHERE id_partie = ?", id_partie, (err, result) => {
-            if (err) reject(err);
-            else resolve(result);
-        });
-    });
-};
-
 // Get all from organisateur
 
 const getAllFromOrganisateur = (id) => {
@@ -57,7 +46,7 @@ const getAllFromOrganisateur = (id) => {
 
 const getAllAvailable = (id) => {
     return new Promise((resolve, reject) => {
-        dbConnect.query("SELECT * FROM partie WHERE status = 'En Attente' AND organisateur != ?", id, (err, result) => {
+        dbConnect.query("SELECT * FROM partie WHERE status = 'AVAILABLE' AND organisateur != ?", id, (err, result) => {
             if (err) reject(err);
             else resolve(result);
         });
@@ -85,16 +74,27 @@ const createNew = (id_organisateur) => {
 };
 
 // ADD Player
-const addPlayer = (id_joueur, id_partie, organisateur) => {
+const addPlayer = (id_joueur, id_partie) => {
     return new Promise((resolve, reject) => {
         dbConnect.query(
             "INSERT INTO joueur_partie (id_joueur, id_partie) VALUES (?, ?)",
-            [id_joueur, id_partie, organisateur],
+            [id_joueur, id_partie],
             (err, result) => {
                 if (err) reject(err);
                 else resolve(result.insertId);
             }
         );
+    });
+};
+
+// UPDATE
+const updatePartie = (partie) => {
+    const { status, id } = partie;
+    return new Promise((resolve, reject) => {
+        dbConnect.query("UPDATE partie SET status = ? WHERE id = ?", [status, id], (err, result) => {
+            if (err) reject(err);
+            else resolve(result);
+        });
     });
 };
 
@@ -106,6 +106,6 @@ export default {
     getAllFromPlayer,
     getAllFromOrganisateur,
     addPlayer,
-    getAllPlayer,
     getAllAvailable,
+    updatePartie,
 };

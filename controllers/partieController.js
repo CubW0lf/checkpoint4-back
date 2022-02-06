@@ -61,19 +61,6 @@ router
         }
     })
 
-    // Get All players in a game
-
-    .get("/:id/players", async (req, res) => {
-        const id_partie = req.params.id;
-        try {
-            const players = await Partie.getAllPlayer(id_partie);
-
-            res.json(players);
-        } catch (error) {
-            res.json({ message: error.message }).status(500);
-        }
-    })
-
     .post("/:id_player", async (req, res) => {
         const id_joueur = req.params.id_player;
 
@@ -88,6 +75,35 @@ router
         }
     })
 
+    .post("/:id_game/:id_player", async (req, res) => {
+        const id_partie = req.params.id_game;
+        const id_joueur = req.params.id_player;
+
+        try {
+            const participate = await Partie.addPlayer(id_joueur, id_partie);
+            if (participate) {
+                res.json(newPlayer);
+            } else res.json({ message: error.message }).status(422);
+        } catch (err) {
+            res.json({ message: err.message }).status(500);
+        }
+    })
+
+    .put("/:id", async (req, res) => {
+        const partie = {
+            id: req.params.id,
+            status: req.body.status,
+        };
+
+        try {
+            const partieUpdate = await Partie.updatePartie(partie);
+            if (partieUpdate) res.json(partie);
+            else res.json({ message: error.message }).status(422);
+        } catch (err) {
+            res.json({ message: err.message }).status(500);
+        }
+    })
+
     .delete("/:id", async (req, res) => {
         const id = req.params.id;
         try {
@@ -95,10 +111,10 @@ router
             if (partieDelete) {
                 res.json(`La partie ${id} a bien été effacée`);
             } else {
-                res.status(422).json(`Une erreur est survenue lors de la suppression`);
+                res.json(`Une erreur est survenue lors de la suppression`).status(422);
             }
         } catch (error) {
-            res.status(500).json(`Erreur serveur`);
+            res.json(`Erreur serveur`).status(500);
         }
         return res.status(201).end();
     });

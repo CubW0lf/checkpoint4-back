@@ -33,6 +33,20 @@ router
         }
     })
 
+    // Get All players in a game
+
+    .get("/game/:id", async (req, res) => {
+        const id_partie = req.params.id;
+
+        try {
+            const players = await Player.getAllPlayer(id_partie);
+
+            res.json(players);
+        } catch (error) {
+            res.json({ message: error.message }).status(500);
+        }
+    })
+
     .get("/team/:id", async (req, res) => {
         const team_id = req.params.id;
         try {
@@ -86,6 +100,22 @@ router
             } else {
                 res.json({ message: error.message }).status(422);
             }
+        } catch (err) {
+            res.json({ message: err.message }).status(500);
+        }
+    })
+
+    .put("/team-choice", async (req, res) => {
+        const team = {
+            id_equipe: req.body.equipe,
+            id_joueur: req.body.joueur,
+            id_partie: req.body.partie,
+        };
+
+        try {
+            const teamChoice = await Player.chooseTeam(team);
+            if (teamChoice) res.json(team);
+            else res.json({ message: error.message }).status(422);
         } catch (err) {
             res.json({ message: err.message }).status(500);
         }
